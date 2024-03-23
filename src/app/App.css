@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.board {
+  margin: 50px auto;
+  width: 720px;
+  height: 720px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  border: 2px solid black;
+}
+.cell {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell.white {
+  background: #c29034;
+}
+.cell.black {
+  background: rgb(85, 55, 0);
+}
+
+.cell.selected {
+  background: green;
+}
+
+.cell.available::after {
+  display: block;
+  content: "";
+  width: 7px;
+  height: 7px;
+  background: yellow;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 10;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.cell.enemy {
+  background: #ff3146;
+}
